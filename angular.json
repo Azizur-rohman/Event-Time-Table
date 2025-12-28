@@ -39,6 +39,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "https://azizur-rohman.github.io/Event-Time-Table/",
               "budgets": [
                 {
                   "type": "initial",
