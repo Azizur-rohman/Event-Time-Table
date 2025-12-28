@@ -1,0 +1,43 @@
+<mat-tab-group class="day-tabs" mat-stretch-tabs="false" mat-align-tabs="start"
+  (selectedTabChange)="onDayChange($event)">
+  <mat-tab *ngFor="let day of days">
+    <ng-template mat-tab-label>
+      <div class="day-label">
+        <div class="day-name">{{ day.dayName }}</div>
+        <div class="day-date">Date: {{ day.date }}</div>
+      </div>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
+
+
+<div class="timetable-wrapper">
+
+  <div class="venue-header">
+    <div class="time-placeholder"></div>
+    <div class="venue" *ngFor="let v of venues">{{ v.name }}</div>
+  </div>
+
+  <div class="scroll-container">
+    <div class="time-column">
+      <div class="time-slot" *ngFor="let t of timeSlots">{{ t }}</div>
+    </div>
+
+    <div class="event-grid">
+      <div class="time-placeholder"></div>
+      <div class="venue-column" *ngFor="let v of venues; let i = index">
+        <ng-container *ngFor="let e of getEventsByVenue(i)">
+          <div  class="event"
+                [style.top.px]="e.top"
+                [style.height.px]="e.height">
+            <div class="event-content">
+                <span>{{ e.start }} - {{ e.end }}</span>
+                <b>{{ e.title }}</b>
+            </div>
+            </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+

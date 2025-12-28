@@ -1,0 +1,111 @@
+.day-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #fff;
+}
+
+.timetable-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+}
+
+.venue-header {
+  display: grid;
+  grid-template-columns: 60px repeat(3, 1fr);
+  position: sticky;
+  top: 48px;
+  background: #fff;
+  z-index: 15;
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+}
+
+.venue-header .time-placeholder {
+  border-right: 1px solid #ccc;
+}
+
+.venue-header .venue {
+  border-right: 1px solid #ccc;
+  text-align: center;
+  padding: 4px 0;
+}
+
+.scroll-container {
+  display: flex;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.time-column {
+  width: 60px;
+  border-right: 1px solid #ccc;
+  flex-shrink: 0;
+}
+
+.time-slot {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: 0px repeat(3, 1fr);
+  flex: 1;
+  position: relative;
+}
+
+.venue-column {
+  position: relative;
+}
+
+.event {
+  position: absolute;
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+  padding: 2px;
+}
+
+.event-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-content span {
+  font-size: 11px;
+  line-height: 1;
+}
+
+.event-content b {
+  line-height: 1;
+}
+
+.day-label {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.day-name {
+  font-weight: bold;
+}
+
+.day-date {
+  font-size: 11px;
+  color: #555;
+}
